@@ -2,7 +2,7 @@
 
 namespace operatorler
 {
-    class Proram{
+    class Program{
         static void Main(String[] args){
             int x=36;
             x|=2;
