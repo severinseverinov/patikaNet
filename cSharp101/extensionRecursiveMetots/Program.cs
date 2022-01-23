@@ -29,7 +29,7 @@
         {  
             if (sayi==0)
                 return 0;
-             else if (sayi==1)
+            else if (sayi==1)
                 return 1;
             else
                 return FibonacciSerisi(sayi-1)+FibonacciSerisi(sayi-2);
