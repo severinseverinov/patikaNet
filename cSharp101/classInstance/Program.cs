@@ -15,11 +15,25 @@ emp2.departman="İka";
 Console.WriteLine("*** Çalışan 2 ***");
 emp2.calisanBilgileri();
 
+Calisan emp3=new Calisan("Ayşe","Kara",234588,"Arge");
+Console.WriteLine("*** Çalışan 3 ***");
+emp3.calisanBilgileri();
+
 class Calisan{
     public String isim;
     public String soyIsim;
     public int no;
     public String departman;
+
+    public Calisan(String isim, String soyIsim, int no, String departman){
+        this.isim=isim;
+        this.soyIsim=soyIsim;
+        this.no=no;
+        this.departman=departman;
+    }
+    public Calisan(){
+        
+    }
 
     public void calisanBilgileri(){
         Console.WriteLine("Çalışan adı : {0}",isim);
