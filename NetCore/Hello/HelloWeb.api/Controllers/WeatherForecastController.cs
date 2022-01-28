@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HelloWeb.api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]s")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -28,5 +28,16 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+    [HttpGet("{id}")]
+    public ActionResult<WeatherForecast> GetbyId(string id)
+    {
+        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        {
+            Date = DateTime.Now.AddDays(index),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+        })
+        .ToArray()[0];
     }
 }
